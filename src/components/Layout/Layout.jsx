@@ -5,10 +5,10 @@ const SharedLayout = () => {
     <div>
       <header>
         <nav>
-          <Link to="/" end>
+          <Link to="/" end="true">
             Home
           </Link>
-          <Link to="/movies" end>
+          <Link to="/movies" end="true">
             Movies
           </Link>
         </nav>
