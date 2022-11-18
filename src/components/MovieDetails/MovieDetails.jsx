@@ -1,11 +1,14 @@
 import { fetchSearchMovies } from 'Api';
-import { useEffect, useState, useRef } from 'react';
-import { useParams, Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 const MovieDetail = () => {
   const [movie, setMovie] = useState(null);
   const { movieID } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const goBack = () => navigate(-1);
 
   useEffect(() => {
     fetchSearchMovies(movieID).then(setMovie);
@@ -28,6 +31,7 @@ const MovieDetail = () => {
   return (
     <>
       <div>
+        <button onClick={goBack}>Go Back</button>
         <div>
           <img
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -50,10 +54,10 @@ const MovieDetail = () => {
         <p>Additional information</p>
         <ul>
           <li>
-            <Link to={'cast'}>Cast</Link>
+            <p to={'cast'}>Cast</p>
           </li>
           <li>
-            <Link to={'reviews'}>Reviews</Link>
+            <p to={'reviews'}>Reviews</p>
           </li>
         </ul>
       </div>
