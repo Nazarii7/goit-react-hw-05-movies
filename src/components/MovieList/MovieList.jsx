@@ -10,8 +10,6 @@ const MovieList = () => {
     fetchTrendingMovie().then(setMovies);
   }, []);
 
-  console.log(movies);
-
   return (
     <ul>
       {movies.map(movie => (

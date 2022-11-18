@@ -21,7 +21,6 @@ const Movie = () => {
       fetchMovies(query).then(setMovies);
     }
   }, [query]);
-  console.log(query);
 
   return (
     <>
