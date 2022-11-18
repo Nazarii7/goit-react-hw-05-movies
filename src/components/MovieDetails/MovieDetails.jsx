@@ -40,6 +40,10 @@ const MovieDetail = () => {
             {title} ({release_date.slice(0, 4)})
           </h2>
           <p>Rating: {vote_average.toFixed(2)}</p>
+          <h3>Overview</h3>
+          <p>{overview}</p>
+          <h3>Genres</h3>
+          <p>{genres.map(genre => genre.name).join(', ')}</p>
         </div>
       </div>
     </>
