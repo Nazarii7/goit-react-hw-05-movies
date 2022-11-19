@@ -1,13 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const ButtonBack = styled.button`
+export const ButtonBack = styled(NavLink)`
   color: #000000;
-  font-weight: 700;
-  background-color: #ebf2fa;
-  border: 2px solid;
-  border-color: #000000;
-  border-radius: 2px;
+  font-weight: 500;
   cursor: hand;
   margin-bottom: 20px;
 `;
