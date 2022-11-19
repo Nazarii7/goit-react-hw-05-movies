@@ -1,13 +1,17 @@
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovies } from 'Api';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { ButtonBack } from './Movie.styled';
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const goBackHome = () => navigate('/');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -17,13 +21,13 @@ const Movie = () => {
   };
 
   useEffect(() => {
-    if (query === '' || query === null) {
-      fetchMovies(query).then(setMovies);
-    }
+    if (query === '' || query === null) return;
+    fetchMovies(query).then(setMovies);
   }, [query]);
 
   return (
     <>
+      <ButtonBack onClick={goBackHome}>Back to Home</ButtonBack>
       <form onSubmit={handleSubmit}>
         <input type="text" name="query" />
         <button type="submit">Search</button>

@@ -1,9 +1,10 @@
 import MovieList from 'components/MovieList/MovieList';
+import { Title } from './Home.styled';
 
 const Home = () => {
   return (
     <>
-      <h1>Tranding today</h1>
+      <Title>Tranding today</Title>
       <MovieList />
     </>
   );
