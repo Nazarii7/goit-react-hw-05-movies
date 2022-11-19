@@ -23,11 +23,11 @@ const MovieCast = () => {
             <img
               src={
                 actor.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+                  ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
                   : `https://banffventureforum.com/wp-content/uploads/2019/08/no-photo-icon-22.png`
               }
               alt={actor.original_name}
-              width="120px"
+              width="100px"
               height="150px"
             />
             <h3>{actor.name}</h3>
